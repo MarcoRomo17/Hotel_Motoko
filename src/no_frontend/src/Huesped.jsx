@@ -8,50 +8,50 @@ import Swal from 'sweetalert2'
 
 function BasicExample() {
     let [nombre, setNombre]=useState('');
-    let [canHues, setcanHues]=useState(0);
+    let [cantidadHuespedes, setcanHues]=useState(0);
     let [habitacion, setHabitacion]=useState(0);
     let [piso, setPiso]=useState(0);
-    let [diaE, setDiaE]=useState('');
-    let [diaS, setDiaS]=useState('');
+    let [diaEntrada, setDiaE]=useState('');
+    let [diaSalida, setDiaS]=useState('');
 
-    const onChangeNombre =(e)=>{
+    let onChangeNombre =(e)=>{
         e.preventDefault();
-        const preNombre = e.target.value;
+        let preNombre = e.target.value;
         setNombre=preNombre;
 
     }
-    const onChangecanHues =(e)=>{
+    let onChangecanHues =(e)=>{
         e.preventDefault();
-        const precanHues = e.target.value;
+        let precanHues = e.target.value;
         setcanHues=precanHues;
 
     }
-    const onChangeHabitacion =(e)=>{
+    let onChangeHabitacion =(e)=>{
         e.preventDefault();
-        const preHabitacion = e.target.value;
+        let preHabitacion = e.target.value;
         setHabitacion=preHabitacion;
 
     }
-    const onChangePiso =(e)=>{
+    let onChangePiso =(e)=>{
         e.preventDefault();
-        const prePiso = e.target.value;
+        let prePiso = e.target.value;
         setPiso=prePiso;
 
     }  
-      const onChangeDiaE =(e)=>{
+      let onChangeDiaE =(e)=>{
         e.preventDefault();
-        const preDiaE = e.target.value;
+        let preDiaE = e.target.value;
         setDiaE=preDiaE;
 
     }
-    const onChangeDiaS =(e)=>{
+    let onChangeDiaS =(e)=>{
         e.preventDefault();
-        const preDiaS = e.target.value;
+        let preDiaS = e.target.value;
         setDiaS=preDiaS;
 
     }
     function crearRegistro() {
-        Swal.fire("Reservndo su huabitacion, por favor espere");
+        Swal.fire("Reservando su habitacion, por favor espere");
         Swal.showLoading();
         no_backend.registrarHuesped(nombre, BigInt(canHues),BigInt(habitacion), BigInt(piso), diaE, diaS).then(huespedes => {
             Swal.fire({
