@@ -7,7 +7,7 @@ import {
 import App from './App';
 import './index.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Huesped from './Huesped';
+import FormularioHuesped from './FormularioHuesped';
 import HuesRes from './HuesRes';
 
 
@@ -18,7 +18,7 @@ const router = createBrowserRouter([
   },
   {
     path: "/huesped",
-    element: <Huesped></Huesped>
+    element: <FormularioHuesped></FormularioHuesped>
   },
   {
     path: "/rh",

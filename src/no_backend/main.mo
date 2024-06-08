@@ -2,7 +2,7 @@ import Array "mo:base/Array";
 
 actor HTbudos {
 
-//Se modificara y se completara
+//Se crea un tipado nuevo, para huespedes
 type host = {
   id : Nat;
   nombre : Text;
@@ -12,7 +12,7 @@ type host = {
    diaEntrada : Text;
   diaSalida : Text
 };
-//Se declara arreglo en el que se van a ir guardando todos los huespedes
+//Se declara arreglo en el que se van a ir guardando todos los huespedes. 
 var huespedes : [host] = [{id =1;
                       nombre = "Nombre del titular";
                       cantidadHuespedes = 1;
@@ -39,13 +39,13 @@ huespedes := Array.append<host>(huespedes, [huespedNuevo]);
 };
 
 
-
+//Funcion que regresa todo el arreglo de los huespedes
 public func huespedesRegistrados (): async [host]{
 return huespedes;
 };
 //Busca unico registro
-public func huespedEspecifico (NTitular: Text) : async  ?host{
-  return Array.find<host>(huespedes, func(n){n.nombre == NTitular})
+public func huespedEspecifico(ID : Nat) : async  ?host{
+  return Array.find<host>(huespedes, func(n){n.id == ID})
 };
 //Actualiza el registrp a base de ID
 public func actualizaRegistro(ID : Nat, NTitular : Text, CH : Nat, h :Nat, p : Nat, DE:Text,DS:Text): async Bool{
@@ -70,9 +70,9 @@ huespedes := Array.map<host, host>(huespedes,func(n){if (n.id == ID){huespedActu
 
   };
 };
-
- public func borrarRegistro(ID : Nat, NTitular : Text  ): async Text{
-var huespedABorrar : ?host = Array.find<host>(huespedes, func(huespedABorrar){huespedABorrar.id == ID and huespedABorrar.nombre==NTitular});
+//Funcion que elimina
+ public func borrarRegistro(ID : Nat, ): async Text{
+var huespedABorrar : ?host = Array.find<host>(huespedes, func(huespedABorrar){huespedABorrar.id == ID});
 if(huespedABorrar != null){
 huespedes := Array.filter<host>(huespedes, func(huespedABorrar) { huespedABorrar.id != ID } );
 return "Simon si se pudo";
