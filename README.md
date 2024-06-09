@@ -1,4 +1,5 @@
 # `no`
+Documentacion oficial para hacer uso de un CRUD de un hotal elaborado por el equipo Los Budos haciendo uso de tecnologías de ICP, más específicamente Motoko para obtener la certificacion de la misma.
 
 Welcome to your new `no` project and to the Internet Computer development community. By default, creating a new project adds this README and some template files to your project directory. You can edit these template files to customize your project and to include your own code to speed up the development cycle.
 
@@ -17,6 +18,9 @@ If you want to start working on your project right away, you might want to try t
 cd no/
 dfx help
 dfx canister --help
+ npm i
+dfx start --background --clean 
+dfx deploy
 ```
 
 ## Running the project locally

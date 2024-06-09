@@ -43,7 +43,7 @@ function HuesRes() {
     }
 
     function eliminarRegistro(id) {
-        Swal.fire("Cargando registro...");
+        Swal.fire("Eliminando registro...");
         Swal.showLoading();
         no_backend.borrarRegistro(BigInt(id)).then(huesped => {
             console.log('Se elimino con exito');
@@ -84,8 +84,8 @@ function HuesRes() {
                                         <td>{Number(huesped.piso)}</td>
                                         <td>{huesped.diaEntrada}</td>
                                         <td>{huesped.diaSalida}</td>
-                                        <td><Button onClick={()=> obtenerUnHuesped(Number(huesped.id))}> Editar</Button>
-                                        <Button onClick={()=> eliminarRegistro(Number(huesped.id))}>Eliminar</Button></td>
+                                        <td><Button variant='warning' onClick={()=> obtenerUnHuesped(Number(huesped.id))}> Modificar reservacion</Button>
+                                        <Button variant='danger' onClick={()=> eliminarRegistro(Number(huesped.id))}>Cancelar reservacion</Button></td>
                                     </tr>
                                 ))
                                 : <tr></tr>

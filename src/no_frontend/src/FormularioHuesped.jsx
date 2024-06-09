@@ -31,6 +31,8 @@ setShow=null
     const [diaEntrada, setDiaE]=useState(mdEntrada ? mdEntrada :'');
     const [diaSalida, setDiaS]=useState(mdSalida ? mdSalida :'');
 
+    const navigate= useNavigate();
+
     const onChangeNombre =(e)=>{
         e.preventDefault();
         const preNombre = e.target.value;
@@ -133,30 +135,32 @@ setShow=null
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Nuemero de habitacion:</Form.Label>
+        <Form.Label>Número de habitacion:</Form.Label>
         <Form.Control type="number" defaultValue={habitacion} onChange={onChangeHabitacion} name="habitacion" placeholder="¿Que tipo de habitacion desea?"/>
       </Form.Group>
 
     <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Numero de piso</Form.Label>
+        <Form.Label>Número de piso</Form.Label>
         <Form.Control type="number" defaultValue={piso} onChange={onChangePiso} name="piso" placeholder="Escriba que numero de piso que desea"/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Dia de entrada:</Form.Label>
+        <Form.Label>Día de entrada:</Form.Label>
         <Form.Control type="text" onChange={onChangeDiaE}  defaultValue={diaEntrada} name="diaE" placeholder="Escriba el dia que empeiza su reservacion"/>
       </Form.Group>
 
       <Form.Group className="mb-3" controlId="formBasicPassword">
-        <Form.Label>Dia de salida:</Form.Label>
+        <Form.Label>Día de salida:</Form.Label>
         <Form.Control type="text" onChange={onChangeDiaS} defaultValue={diaSalida} name="diaS" placeholder="Escriba el dia que termina su reservacion"/>
       </Form.Group>
       
 <center>
       <Button variant="outline-primary" size='lg' onClick={esEditable ? actualizaRegistro : crearRegistro}>{esEditable ? 'Editar' : 'Guardar'} registro</Button>{' '}
+      <Button size="lg" variant="outline-success" onClick={()=>navigate('/rh')}>Ver registros</Button>
       </center>
       </div>
     </Form>
+    
     </div>
 
  
